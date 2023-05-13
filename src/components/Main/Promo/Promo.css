@@ -1,0 +1,101 @@
+.promo{
+  display: flex;
+  justify-content: center; 
+  background-color: #073042;
+}
+
+.promo__content {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+}
+
+.promo__title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: #fff;
+  margin: 184px auto 224px;
+  max-width: 730px;
+  text-align: center;
+}
+
+.promo__decoration {
+  background-image: url(../../../images/PageLogo.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 320px;
+  height: 320px;
+  position: absolute;
+  margin: 82px auto 122px;
+}
+
+
+.promo__links {
+  background-color: #272727;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.promo__link {
+  color: #fff;
+  border: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  background-color: initial;
+  padding: 0;
+  border-bottom: 1px solid #fff;
+  margin-right: 40px;
+  cursor: pointer;
+}
+
+.promo__link:last-child {
+  margin-right: 0;
+}
+@media screen and (max-width: 768px) {
+  .promo__decoration{
+    margin: 224px auto 240px;
+  }
+
+  .promo__title {
+    margin: 326px auto 342px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .promo__decoration{
+    width: 248px;
+    height: 248px;
+    margin: 142px auto 180px;
+  }
+
+  .promo__title {
+    max-width: 300px;
+    margin: 207px auto 246px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 31px;
+    line-height: 39px;
+    text-align: center;
+    letter-spacing: -0.04em;
+  }
+}
+
+@media  screen and (max-width: 420px) {
+  .promo__link{
+    font-size: 11px;
+    margin-right: 24px;
+  }
+
+}

@@ -1,0 +1,139 @@
+.techs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #272727;
+}
+
+.techs__title {
+  margin: 100px 0 0;
+  padding-bottom: 23px;
+}
+
+.techs__description-title {
+  font-family: 'Inter', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: #fff;
+  margin: 90px 0 0;
+}
+
+.techs__description-text {
+  font-family: 'Inter', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+  margin: 26px 0 0;
+  max-width: 460px;
+}
+
+.techs__description-stack {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 100px auto 100px;
+  max-width: 690px;
+  grid-gap: 10px;
+}
+
+.techs__description-stack-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #303030;
+  width: 90px;
+  height: 60px;
+  border-radius: 10px;
+}
+
+.techs__description-stack-btn-text {
+  font-family: 'Inter', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .techs__title {
+    margin: 90px 0 0;
+    padding-bottom: 23px;
+  }
+  
+  .techs__description-title {
+    margin: 80px 0 0;
+  }
+  
+  .techs__description-text {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 22px 0 0;
+  }
+
+  .techs__description-stack {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 83px 0 90px;
+    max-width: 648px;
+  }
+
+  .techs__description-stack-btn {
+    width: 84px;
+    height: 57px;
+  }
+
+  .techs__description-stack-btn-text {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+@media  screen and (max-width: 690px) {
+  .techs__description-stack {
+    width: calc((178 / 320) * 100%);
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .techs__title {
+    margin: 70px 0 0;
+    padding-bottom: 28px;
+  }
+  
+  .techs__description-title {
+    margin: 60px 0 0;
+    font-size: 30px;
+    line-height: 36px;
+  }
+  
+  .techs__description-text {
+    font-size: 11px;
+    line-height: 16px;
+    margin: 24px 0 0;
+    max-width: 292px;
+  }
+
+  .techs__description-stack {
+    margin: 50px 0 70px;
+    justify-content: start;
+  }
+}
