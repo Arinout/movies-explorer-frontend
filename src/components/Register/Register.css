@@ -65,12 +65,26 @@
   outline: none;
 }
 
+.register__input:last-of-type {
+  color: #ee3465;
+}
+
 .register__input:focus-visible{
   border-bottom: 1px solid #4285F4 ;
 }
 
-.register__input-error {
+.register__input:focus-visible:last-of-type {
+  border-bottom: 1px solid #424242 ;
+}
 
+.register__input-error {
+  color:#ee3465;
+  margin: 6px 0 0;
+  font-family: 'Inter', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
 }
 
 .register__submit-btn {

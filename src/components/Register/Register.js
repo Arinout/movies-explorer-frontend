@@ -51,6 +51,7 @@ function Register() {
               required
             />
             <span className='register__input-error'>
+              Что-то пошло не так...
             </span>
           </label>
           <button className='register__submit-btn button' type='submit'>Зарегистрироваться</button>

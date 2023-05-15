@@ -5,6 +5,8 @@
   justify-content: center;
   width: 100%;
   background-color: #272727;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .techs__title {

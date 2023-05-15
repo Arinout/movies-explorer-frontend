@@ -18,7 +18,7 @@ function SearchForm () {
             required
           />
           <button
-            className='search__button'
+            className='search__button button'
             type='submit'
           ></button>
         </form>

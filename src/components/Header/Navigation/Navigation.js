@@ -21,8 +21,8 @@ function HeaderLogIn ({ isModalOpen, onClickModal }) {
                 <NavLink
                   className={({ isActive }) =>
                     !isActive 
-                      ? 'navigation__link navigation__link_active link'
-                      : 'navigation__link link'
+                      ? 'navigation__link navigation__link_active navigation__link_type_main link'
+                      : 'navigation__link navigation__link_type_main link'
                   }
                   to='/'
                 >

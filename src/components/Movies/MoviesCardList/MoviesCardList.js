@@ -18,7 +18,7 @@ function MoviesCardList () {
         <MoviesCard/>
         <MoviesCard/>
       </ul>
-        <button className='movies-card-list__load-more'>
+        <button className='movies-card-list__load-more button' >
             Ещё
         </button>
     </section>

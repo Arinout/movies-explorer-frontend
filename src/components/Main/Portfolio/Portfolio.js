@@ -10,6 +10,8 @@ export default function Portfolio() {
             <li className='portfolio__navigation-list-item'>
               <a
                 className='portfolio__links-item link'
+                href='https://arinout.github.io/how-to-learn/'
+                target='_blank' rel='noreferrer'
               >
                 <p className='portfolio__navigation-list-item-text'>
                   Статичный сайт
@@ -32,6 +34,8 @@ export default function Portfolio() {
             <li className='portfolio__navigation-list-item'>
               <a
                 className='portfolio__links-item link'
+                href='https://arinout.github.io/react-mesto-auth/'
+                target='_blank'
               >
                 <p className='portfolio__navigation-list-item-text'>
                   Одностраничное приложение
