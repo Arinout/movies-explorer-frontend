@@ -1,0 +1,6 @@
+@import url(./vedor/normalize.css);
+@import url(./vedor/fonts/fonts.css);
+
+body{
+  background-color: #202020;
+}
