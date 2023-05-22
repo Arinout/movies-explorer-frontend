@@ -1,8 +1,21 @@
 import './Login.css';
+import { useEffect } from 'react';
+import { useFormWithValidation } from '../../hook/useFormValidation';
 import { Link } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 
-function Login() {
+function Login({ onLogin, isSubmitting }) {
+  const { values, handleChange, resetForm, errors, isValid } =
+    useFormWithValidation();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onLogin(values);
+  };
+
+  useEffect(() => {
+    resetForm();
+  }, [resetForm]);
   return (
     <div className='login'>
       <div className='login__content'>
@@ -11,36 +24,48 @@ function Login() {
           <h2 className='login__heading-text'>Рады видеть!</h2>
         </div>
 
-        <form className='login__form'>
+        <form 
+        id='login'
+        className='login__form'
+        name='login'
+        onSubmit={handleSubmit}>
 
           <label className='login__lable'>
             Email
             <input 
-              className='login__input' 
-              type='email'
               name='email'
-              minLength="6"
-              maxLength="30"
+              className='login__input'
+              onChange={handleChange}
+              value={values.email ?? ''}
+              type='email'
               required
               />
             <span className='login__input-error'>
-
+            {errors.email ?? ''}
             </span>
           </label>
 
           <label className='login__lable'>
             Пароль
             <input 
-              className='login__input' 
-              type='password'
               name='password'
-              minLength="8"
+              className='login__input'
+              onChange={handleChange}
+              value={values.password ?? ''}
+              type='password'
               required
+              minLength='6'
+              maxLength='30'
             />
             <span className='login__input-error'>
+            {errors.password ?? ''}
             </span>
           </label>
-          <button className='login__submit-btn button' type='submit'>Войти</button>
+          <button 
+          className='login__submit-btn button' 
+          type='submit'
+          form='login'
+          disabled={!isValid || isSubmitting}>Войти</button>
         </form>
         <p className='login__signin'>
           Еще не зарегистрированы?

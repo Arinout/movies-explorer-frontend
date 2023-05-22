@@ -65,16 +65,9 @@
   outline: none;
 }
 
-.register__input:last-of-type {
-  color: #ee3465;
-}
 
 .register__input:focus-visible{
   border-bottom: 1px solid #4285F4 ;
-}
-
-.register__input:focus-visible:last-of-type {
-  border-bottom: 1px solid #424242 ;
 }
 
 .register__input-error {

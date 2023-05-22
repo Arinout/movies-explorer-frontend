@@ -4,7 +4,7 @@ import { Link, useLocation} from 'react-router-dom';
 import Navigation from './Navigation/Navigation';
 import {useState} from 'react';
 
-function Header() {
+function Header({ isLoggedIn }) {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const handleModalBtnClick = () => setIsModalOpen(!isModalOpen);
@@ -35,7 +35,7 @@ const logInHeader = (
       <div className='header__content'>
         <Logo />
         {
-          pathname ==='/' ? logOutHeader : logInHeader
+          isLoggedIn ? logInHeader: logOutHeader 
         }
       </div>
     </header>

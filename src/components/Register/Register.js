@@ -1,8 +1,22 @@
 import './Register.css';
+import { useEffect } from 'react';
+import { useFormWithValidation } from '../../hook/useFormValidation';
 import { Link } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 
-function Register() {
+function Register({ onRegister, isSubmitting }) {
+  const { values, handleChange, resetForm, errors, isValid } =
+    useFormWithValidation();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onRegister(values);
+  };
+
+  useEffect(() => {
+    resetForm();
+  }, [resetForm]);
+
   return (
     <div className='register'>
       <div className='register__content'>
@@ -11,50 +25,65 @@ function Register() {
           <h2 className='register__heading-text'>Добро пожаловать!</h2>
         </div>
 
-        <form className='register__form'>
+        <form 
+        className='register__form'
+        id='submit'
+        name='register'
+        onSubmit={handleSubmit}
+        >
         <label className='register__lable'>
           Имя
           <input 
+            name='name'
             className='register__input'
-            type='password'
-            name='password'
-            minLength="2"
-            maxLength="30"
-            required 
+            onChange={handleChange}
+            value={values.name ?? ''}
+            type='text'
+            required
+            minLength='2'
+            maxLength='30'
             />
-          <span className='register__input-error'>
+          <span className='register__input-error'>{errors.name ?? ''}
           </span>
         </label>
 
           <label className='register__lable'>
             Email
             <input 
-              className='register__input' 
-              type='email'
               name='email'
-              minLength="6"
-              maxLength="30"
+              className='register__input'
+              onChange={handleChange}
+              value={values.email ?? ''}
+              type='email'
               required
               />
             <span className='register__input-error'>
-
+            {errors.email ?? ''}
             </span>
           </label>
 
           <label className='register__lable'>
             Пароль
             <input 
-              className='register__input' 
-              type='password'
               name='password'
-              minLength="8"
+              className='register__input'
+              onChange={handleChange}
+              value={values.password || ''}
+              type='password'
               required
+              minLength='6'
+              maxLength='30'
             />
             <span className='register__input-error'>
-              Что-то пошло не так...
+            {errors.password ?? ''}
             </span>
           </label>
-          <button className='register__submit-btn button' type='submit'>Зарегистрироваться</button>
+          <button 
+          className='register__submit-btn button' 
+          type='submit'
+          form='submit'
+          disabled={!isValid || isSubmitting}
+          >Зарегистрироваться</button>
         </form>
         <p className='register__signin'>
           Уже зарегистрированы?

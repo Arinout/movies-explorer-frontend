@@ -3,7 +3,7 @@ import Header from '../Header/Header';
 import { Outlet, useLocation } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 
-function Page () {
+function Page ({ isLoggedIn }) {
   const currentLocation = useLocation();
   const footerRoutesArr = ['/', '/movies', '/saved-movies'];
   const handleElementRouteCheck = (routesArr) =>
@@ -11,7 +11,7 @@ function Page () {
 
   return(
     <div className='page'>
-      <Header/>
+      <Header isLoggedIn = {isLoggedIn} />
       <Outlet />
       {handleElementRouteCheck(footerRoutesArr) && <Footer />}
     </div>
