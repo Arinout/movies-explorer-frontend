@@ -6,3 +6,6 @@ https://arinout.movies.nomoredomains.work/
 
 # Back-end
 https://api.arinout.movies.nomoredomains.work/
+
+# Pull request
+https://github.com/Arinout/movies-explorer-frontend/pull/2
