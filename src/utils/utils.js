@@ -1,5 +1,7 @@
+import { MOVIE_DURATION } from "./constants";
+
 function filterShortMovies(movies) {
-    return movies.filter(movie => movie.duration < 40)
+    return movies.filter(movie => movie.duration < MOVIE_DURATION)
   }
 
 function filterMoviesSearch (moviesArr, searchQuery, isShortMoviesCheckbox) {
@@ -14,7 +16,7 @@ function filterMoviesSearch (moviesArr, searchQuery, isShortMoviesCheckbox) {
         .indexOf(searchQuery.toLowerCase().trim()) !== -1
   });
 
-  return isShortMoviesCheckbox ? filterShortMovies(filtredMoviesArr) : filtredMoviesArr;
+  return filtredMoviesArr;
 }
 
 function changeDuration(duration) {

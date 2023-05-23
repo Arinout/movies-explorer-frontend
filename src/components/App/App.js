@@ -35,7 +35,7 @@ function App() {
         .then((res) => {
           setIsLoggedIn(true);
           setCurrentUser(res);
-          navigate('/movies');
+          navigate(currentLocation.pathname);
         })
         .catch((err) => console.error(`Токен не соответствует: (${err})`));
     }
@@ -144,6 +144,7 @@ function App() {
     await mainApi
       .patchUser(name, email)
       .then((data) => {
+        alert('Вы успешно обновили данные!')
         setCurrentUser(data);
       })
       .catch((err) => {

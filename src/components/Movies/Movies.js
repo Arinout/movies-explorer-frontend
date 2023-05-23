@@ -51,20 +51,20 @@ function Movies({ userMovieList, onMark, onDelete }) {
     localStorage.setItem(`${currentUser.email} - isShortMovies`, isShortMovies);
     localStorage.setItem(`${currentUser.email} - movieSearch`, inputValue);
 
-    if (movieList.length === 0) {
+    if (movieList.length === 0 && !isShortMovies) {
       setIsLoading(true);
       moviesApi
         .getMovies()
         .then((movies) => {
           setMovieList(movies);
+          localStorage.setItem(
+            `${currentUser.email} - initialMovies`,
+            JSON.stringify(movies)
+          );
           handleFilterMoviesSearch(
             transformMoviesData(movies),
             inputValue,
             isShortMovies
-          );
-          localStorage.setItem(
-            `${currentUser.email} - initialMovies`,
-            JSON.stringify(movies)
           );
         })
         .catch(() =>

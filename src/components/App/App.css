@@ -32,6 +32,12 @@ img {
   opacity: 0.6;
 }
 
+.button-inactive{
+  cursor: default;
+  background-color: inherit;
+  color: #a0a0a0;
+  transition: none;
+}
 .section-title {
   font-family: 'Inter', Arial, sans-serif;
   font-style: normal;

@@ -62,7 +62,9 @@ function Login({ onLogin, isSubmitting }) {
             </span>
           </label>
           <button 
-          className='login__submit-btn button' 
+          className= {
+            isValid ? 'login__submit-btn button' : 'login__submit-btn button-inactive'
+          } 
           type='submit'
           form='login'
           disabled={!isValid || isSubmitting}>Войти</button>

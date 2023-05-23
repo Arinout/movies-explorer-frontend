@@ -79,7 +79,9 @@ function Register({ onRegister, isSubmitting }) {
             </span>
           </label>
           <button 
-          className='register__submit-btn button' 
+          className={
+            isValid ? 'register__submit-btn button' : 'register__submit-btn button-inactive' 
+          }
           type='submit'
           form='submit'
           disabled={!isValid || isSubmitting}

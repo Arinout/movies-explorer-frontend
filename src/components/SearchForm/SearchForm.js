@@ -12,11 +12,6 @@ function SearchForm ({ isShortMovies, onSearch, onFilterCheckbox, setIsErrorMess
   const currentLocation = useLocation();
   const { values, handleChange, errors, isValid } = useFormWithValidation();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSearch(values.search);
-  };
-
   useEffect(() => {
     if (
       currentLocation.pathname === '/movies' &&
@@ -36,6 +31,13 @@ function SearchForm ({ isShortMovies, onSearch, onFilterCheckbox, setIsErrorMess
       });
   }, [values, currentUser.email, currentLocation.pathname]);
 
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSearch(values.search);
+  };
+
+  
   return (
     <section className='search'>
       <div className='search__container'>

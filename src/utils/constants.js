@@ -4,6 +4,8 @@ export const ERROR_MESSAGES = {
     EMPTY_INPUT: 'Нужно ввести ключевое слово'
   }
 
+export const MOVIE_DURATION = 40;
+
   export const DEVICE_SCREEN_SETTINGS = {
     desktop: {
       minWidth: 998,

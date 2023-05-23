@@ -67,7 +67,9 @@ function Profile ({ onSignOut, onSubmit, isSubmitting }) {
         <button
           form='submit'
           type='submit'
-          className='profile__button-edit'
+          className= {
+           isRequiredСondition? 'profile__button-edit button-inactive' : 'profile__button-edit button'
+          }
           disabled={isRequiredСondition || isSubmitting}
         >
           Редактировать
